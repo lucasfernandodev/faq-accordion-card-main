@@ -71,7 +71,12 @@ img.woman{
 
 
 
-.hero .faq article{
+.hero .faq .faq-inside-image{
+    width: 60%;
+
+}
+
+.hero .faq .faq-inside-text{
     width: 50%;
 }
 
@@ -102,24 +107,25 @@ img.woman{
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
 }
 
 .faq-inside-image .container .woman{
+    height: auto;
+    width: auto;
+
     position: relative;
     z-index: 18;
-    margin-left: -11vw;
-    width: 100%;
-    height: auto;
+    margin-left: -6vw;
+
 }
 
 .faq-inside-image .container .bg{
     position: absolute;
-    top: -30vh;
-    margin-left: -100%;
+    top: -60%;
+    margin-left: -120%;
     z-index: 17;
 
-    width: 820px;
+    width: 200%;
     height: auto;
 }
 
@@ -128,6 +134,7 @@ img.woman{
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    position: relative;
 }
 
 .faq-inside-text h2.title{
@@ -136,16 +143,20 @@ img.woman{
     color: var(--Very-dark-desaturated-blue);
     text-transform: uppercase;
     font-weight: bold;
+    position: absolute;
+    top: 70px;
 }
 
-.container{
+.faq-inside-text .container{
     width: 100%;
+    margin-top: 50px;
     max-width: 350px;
 }
 
 .acordion{
     list-style: none;
     width: 100%;
+    overflow: auto;
 }
 
 .acordion .acordion-item{
@@ -172,6 +183,7 @@ img.woman{
     color: var(--Soft-red);
     font-weight: bold;
 }
+
 .acordion .acordion-item .title{
     font-weight: 400;
     color: var(--Very-dark-grayish-blue);
@@ -183,5 +195,45 @@ img.woman{
 
 .acordion .acordion-item span{
     display: none;
+    line-height: 1.6em;
 }
 
+/* Active */
+.acordion .active{
+    cursor: default;
+}
+.acordion .active .title{
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.acordion .active span{
+    display: block;
+}
+
+.acordion .acordion-item.active::before{
+    
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    color: var(--Soft-red);
+    font-weight: bold;
+    display: none;
+}
+
+.acordion .active::after{
+    
+    content: "\f106";
+    font-family: "Font Awesome 5 Free";
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    color: var(--Soft-red);
+    font-weight: bold;
+}
